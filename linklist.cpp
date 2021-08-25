@@ -74,7 +74,7 @@ void traveresenode()
         trav = start;
         while (trav != NULL)
         {
-            cout << "link list data " << trav->data;
+            cout << trav->data <<"->";
             trav = trav->link;
         }
     }
