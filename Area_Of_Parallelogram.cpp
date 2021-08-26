@@ -18,3 +18,5 @@ int main()
     return 0;
 
 }
+
+//area of rhombus uses the same formula as the parallelogram uses .
