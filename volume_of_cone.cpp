@@ -12,7 +12,7 @@ int main (void){
     float radius , height ;
     cin >> radius >> height ;
 
-    float volume = pi * pow (radius, 2) *height ;
+    float volume = (pi * pow (radius, 2) *height)/3 ;
 
     cout <<"volume of cone "<<volume ;
 
