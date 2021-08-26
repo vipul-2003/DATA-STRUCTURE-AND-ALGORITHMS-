@@ -6,11 +6,11 @@ using namespace std ;
 int main(void ){
 
     cout <<"enter the principle , rate and time ";
-    int principle , rate , time ;
+    int principle , rate , t ;
 
-    cin >> principle >> rate >> time ;
+    cin >> principle >> rate >> t  ;
 
-    double simpleInterest = (principle * rate * time )/ 100 ;
+    float simpleInterest = (principle * rate * t )/ 100 ;
 
     cout <<"simple interest "<< simpleInterest;
 
