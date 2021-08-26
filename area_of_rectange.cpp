@@ -5,7 +5,7 @@ using namespace std ;
 
 int main (void )
 {
-    cout <<"enter the length and breadth of rectangle \n"<<endl;
+    cout <<"enter the length and breadth of rectangle "<<endl;
     int len , br ;
 
     cin >>len >>br ;
