@@ -16,6 +16,7 @@ int main(void )
     while (i >0)
     {
         ans =  ans * i  ;
+        --i;
     }
 
     cout <<"the solution of factorial is "<<ans ;
