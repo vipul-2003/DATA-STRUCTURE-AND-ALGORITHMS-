@@ -1,22 +1,26 @@
 #include <iostream>
-#include <Stdio.h>
+#include <stdio.h>
 
 using namespace std;
 
-int main(void)
+int main(void )
 {
-    int num ;
-    cout <<"Enter the no.to find its factorial"<<endl;
-    cin>>num;
+    cout <<"Enter the number to print series upto this " ;
 
-    int ans = 1;
+    int n ;
+    cin >>n ;
 
-    for (int i = num ; i>1 ; --i)
+    cout <<"The fibonacci series is "<<endl;
+    int a = 0 , b = 1;
+
+    while (n>0)
     {
-        ans = ans * i ;
+        cout <<a <<" "<<b;
+        a =  a + b ;
+        b =  b + a; 
+
+        n--;
     }
 
-    cout <<"The factorial of the number is "<< ans ;
-
-    return 0; 
-}  
+return 0 ;
+}
