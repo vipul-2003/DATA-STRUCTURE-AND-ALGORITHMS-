@@ -29,7 +29,6 @@ int main(void )
     float amount = principle*pow((1 + (interestRate/n)) , n*time );
 
     cout <<"Compound Interest is " << amount <<endl;
-    
 
     return 0;
 }
