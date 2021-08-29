@@ -6,14 +6,9 @@
 
 using namespace std ;
 
-int main(void )
+void even_odd(int num )
 {
-    cout <<"ENter the number to check even or odd "<<endl;
-    int ch ;
-
-    cin>>ch ;
-
-    if (ch % 2 == 0) 
+    if (num % 2 == 0) 
     {
         cout <<"Even function "<<endl;
     }
@@ -23,6 +18,17 @@ int main(void )
         cout <<"Odd function "<<endl;
     }
 
+}
+
+int main(void )
+{
+    cout <<"ENter the number to check even or odd "<<endl;
+    int ch ;
+
+    cin>>ch ;
+
+    even_odd(ch);
+    
     return 0 ;
 
 }
