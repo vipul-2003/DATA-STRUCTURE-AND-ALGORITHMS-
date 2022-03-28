@@ -26,7 +26,6 @@ void insertAtHead(Node *&head, int val)
         head = n;
         return;
     }
-    Node *n = new Node(val);
 
     Node *temp = head;
     while (temp->next != head)
@@ -61,21 +60,20 @@ void insertAtTail(Node *&head, int val)
     n->next = head;
 }
 
-// To delete the element of the linklist present at the node 
-void deleteAtHead(Node * head)
+// To delete the element of the linklist present at the node
+void deleteAtHead(Node *&head)
 {
-    Node* temp = head;
+    Node *temp = head;
     while (temp->next != head)
     {
-        temp =temp->next;
+        temp = temp->next;
     }
 
-    Node* todelete = head;
+    Node *todelete = head;
     temp->next = head->next;
     head = head->next;
 
-    delete ()
-
+    delete (todelete);
 }
 
 // To delete the element of the linklist
@@ -85,7 +83,7 @@ void deletion(Node *&head, int pos)
     if (pos == 1)
     {
         deleteAtHead(head);
-        return ;
+        return;
     }
     Node *temp = head;
     int count = 1;
@@ -93,6 +91,7 @@ void deletion(Node *&head, int pos)
     while (count != pos - 1)
     {
         temp = temp->next;
+        count++;
     }
 
     Node *todelete = temp->next;
@@ -109,4 +108,35 @@ void display(Node *head)
         cout << temp->data << " ";
         temp = temp->next;
     } while (temp != head);
+
+    cout << "\n";
+}
+
+int main()
+{
+    Node *head = NULL;
+    insertAtTail(head, 1);
+    insertAtTail(head, 2);
+    insertAtTail(head, 3);
+
+    display(head);
+
+    deletion(head, 2);
+
+    display(head);
+
+    insertAtHead(head, 9);
+
+    insertAtHead(head, 8);
+    insertAtHead(head, 7);
+
+    display(head);
+
+    deletion(head, 2);
+    display(head);
+
+    deletion(head, 1);
+    display(head);
+
+      return 0;
 }
