@@ -50,7 +50,6 @@ void inserAtTail(Linklist *&head, int data, string naam)
     }
     temp->next = new_node;
     // and new_node should have Null by paramaetrized constructor
-
 }
 
 // to insert the element at head
@@ -59,7 +58,6 @@ void insertAtHead(Linklist *&head, int data, string naam)
     Linklist *new_node = new Linklist(data, naam);
     new_node->next = head;
     head = new_node;
-
 }
 
 // to delete the node from the beginning
@@ -69,7 +67,6 @@ void deleteFromBegin(Linklist *&head)
     Linklist *Todelete = head;
     head = head->next;
     delete (Todelete);
-
 }
 
 // to delete the node from the end
@@ -84,23 +81,21 @@ void deleteFromEnd(Linklist *&head)
     Linklist *ToDelete = temp->next;
     temp->next = NULL;
     delete (ToDelete);
-
 }
 
 // to delete by the value inserted
-void Delete(Linklist* &head, int value)
+void Delete(Linklist *&head, int value)
 {
     // if the head/linklist is empty
     if (head == NULL)
     {
-        return ;
+        return;
     }
 
     if (head->next == NULL)
     {
         deleteFromBegin(head);
     }
-
 
     Linklist *temp = head;
 
@@ -111,7 +106,6 @@ void Delete(Linklist* &head, int value)
     Linklist *todelete = temp->next;
     temp->next = temp->next->next;
     delete (todelete);
-
 }
 
 // to display the elements of the Linklist
@@ -124,6 +118,18 @@ void display(Linklist *head)
         temp = temp->next;
     }
     cout << "NULL " << endl;
+}
+
+Linklist *reverse(Linklist *head)
+{
+    Linklist *prevptr = NULL;
+    Linklist *currptr = head;
+    Linklist *nextptr;
+
+    while (currptr != NULL)
+    {
+        
+    }
 }
 
 int main()
