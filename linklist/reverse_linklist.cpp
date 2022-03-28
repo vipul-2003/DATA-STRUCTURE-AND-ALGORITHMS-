@@ -9,11 +9,13 @@ public:
     int rollno;
     string name;
 
+    Linklist *next; // pointer for the next node
+
     Linklist(int val, string naam)
     {
         rollno = val;
         name = naam;
+        next = NULL;
     }
-
-    
 };
+
