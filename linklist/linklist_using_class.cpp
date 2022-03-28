@@ -50,7 +50,7 @@ void inserAtTail(Linklist *&head, int data, string naam)
     }
     temp->next = new_node;
     // and new_node should have Null by paramaetrized constructor
-    
+
 }
 
 // to insert the element at head
@@ -90,6 +90,18 @@ void deleteFromEnd(Linklist *&head)
 // to delete by the value inserted
 void Delete(Linklist* &head, int value)
 {
+    // if the head/linklist is empty
+    if (head == NULL)
+    {
+        return ;
+    }
+
+    if (head->next == NULL)
+    {
+        deleteFromBegin(head);
+    }
+
+
     Linklist *temp = head;
 
     while (temp->next->rollno != value)
