@@ -128,8 +128,13 @@ Linklist *reverse(Linklist *head)
 
     while (currptr != NULL)
     {
-        
+        nextptr = currptr->next;
+        currptr->next = prevptr;
+        prevptr = currptr;
+        currptr = nextptr;
     }
+
+    return (prevptr);
 }
 
 int main()
@@ -154,6 +159,9 @@ int main()
 
     Delete(head, 1);
     display(head);
+
+    Linklist * newnode = reverse(head);
+    display(newnode);
 
     return 0;
 }
