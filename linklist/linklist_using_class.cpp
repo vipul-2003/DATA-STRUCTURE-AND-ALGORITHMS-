@@ -48,18 +48,58 @@ void inserAtTail(Linklist *&head, int data, string naam)
     {
         temp = temp->next;
     }
-
     temp->next = new_node;
     // and new_node should have Null by paramaetrized constructor
+    
 }
 
 // to insert the element at head
 void insertAtHead(Linklist *&head, int data, string naam)
 {
     Linklist *new_node = new Linklist(data, naam);
-
     new_node->next = head;
     head = new_node;
+
+}
+
+// to delete the node from the beginning
+void deleteFromBegin(Linklist *&head)
+{
+
+    Linklist *Todelete = head;
+    head = head->next;
+    delete (Todelete);
+
+}
+
+// to delete the node from the end
+void deleteFromEnd(Linklist *&head)
+{
+    Linklist *temp = head;
+
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    Linklist *ToDelete = temp->next;
+    temp->next = NULL;
+    delete (ToDelete);
+
+}
+
+// to delete by the value inserted
+void Delete(Linklist* &head, int value)
+{
+    Linklist *temp = head;
+
+    while (temp->next->rollno != value)
+    {
+        temp = temp->next;
+    }
+    Linklist *todelete = temp->next;
+    temp->next = temp->next->next;
+    delete (todelete);
+
 }
 
 // to display the elements of the Linklist
@@ -83,11 +123,18 @@ int main()
     inserAtTail(head, 3, "Vipul kumar Singh");
 
     display(head);
-
     insertAtHead(head, 4, "Ram Kumar ");
 
     insertAtHead(head, 5, " shri Rajesh Kumar ");
+    display(head);
 
+    deleteFromBegin(head);
+    display(head);
+
+    deleteFromEnd(head);
+    display(head);
+
+    Delete(head, 1);
     display(head);
 
     return 0;
