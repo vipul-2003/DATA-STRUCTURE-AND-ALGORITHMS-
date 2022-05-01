@@ -113,7 +113,7 @@ node reverseK(node *&head, int k)
         head->next = reverseK(nextptr, k);
     }
 
-    return prevptr;
+    return *prevptr;
 }
 
 
@@ -133,6 +133,10 @@ int main ()
     display(head);
 
     int k = 2 ;
-    node* newnode = reverseK()
+    node* newnode = reverseK(head , 2);
+
+    display(newnode);
+
+    return 0;
 
 }
