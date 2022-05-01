@@ -28,6 +28,7 @@ void insertAtHead(node *&head, int val)
     if (head == NULL)
     {
         head = newnode;
+        return;
     }
 
     // To insert the element at first position in the linklist
@@ -65,7 +66,7 @@ void insertAtTail(node *&head, int val)
 // this function is used for displaying the data
 void display(node *head)
 {
-    while (head->next != NULL)
+    while (head != NULL)
     {
         cout << head->data << " ";
 
@@ -78,8 +79,8 @@ int main()
 {
     node *head = NULL;
 
-    insertAtHead(head, 1);
     insertAtHead(head, 2);
+    insertAtHead(head, 1);
 
     display(head);
 
@@ -89,4 +90,49 @@ int main()
     display(head);
 
     return 0;
+}
+
+node reverseK(node *&head, int k)
+{
+    node* prevptr = NULL;
+    node* currptr = head;
+    node* nextptr;
+
+    int count = 0;
+
+    while (currptr != NULL && count < k)
+    {
+        nextptr = currptr->next;
+        currptr->next = prevptr;
+        prevptr = currptr;
+        currptr = nextptr;
+        count++;
+    }
+    if (nextptr != NULL)
+    {
+        head->next = reverseK(nextptr, k);
+    }
+
+    return prevptr;
+}
+
+
+int main ()
+{
+    node * head = NULL;
+    insertAtTail(head , 1);
+    
+    insertAtTail(head , 2);
+    insertAtTail(head , 3);
+
+    insertAtTail(head , 4);
+
+    insertAtTail(head , 5);
+    insertAtTail(head , 6);
+
+    display(head);
+
+    int k = 2 ;
+    node* newnode = reverseK()
+
 }
