@@ -24,8 +24,8 @@ void insertAtHead(node *&head, int val)
     if (head == NULL)
     {
         head = n;
-        n->next = n;
-        n->prev = n;
+        head->next = n;
+        head->prev = n;
         return;
     }
 
@@ -37,9 +37,10 @@ void insertAtHead(node *&head, int val)
     }
 
     temp->next = n;
-    n->prev=temp;
+    n->prev = temp;
+    head->prev = n;
+
     n->next = head;
-    head->prev = temp;
     head = n;
 }
 
@@ -61,9 +62,10 @@ void insertAtTail(node *&head, int val)
     }
 
     temp->next = n;
-    n->next = head;
-    n->prev=temp;
+
+    n->prev = temp;
     head->prev = n;
+    n->next = head;
 }
 
 void display(node *head)
@@ -77,7 +79,8 @@ void display(node *head)
         temp = temp->next;
     }
 
-    cout << "NULL"<< "\n";
+    cout << "NULL"
+         << "\n";
 }
 
 int main()
@@ -86,12 +89,8 @@ int main()
     node *head = NULL;
 
     insertAtHead(head, 1);
-
     insertAtTail(head, 2);
-
     insertAtTail(head, 3);
-
-    insertAtTail(head, 4);
 
     display(head);
     return 0;
